@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Mobile By Bintang</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-shopping-cart"></i> Aplikasi Mobile</h1>
+            <nav>
+                <ul>
+                    <li><a href="#products">Produk</a></li>
+                    <li><a href="#cart">Keranjang</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="products">
+            <h2>Produk Terbaru</h2>
+            <h3>Kaos</h3>
+            <div class="product-list">
+                <div class="product-item">
+                    <img src="images/produk1.jpg" alt="Produk 1">
+                    <h3>Kaos Polos</h3>
+                    <p>Rp. 100.000</p>
+                    <button onclick="addToCart('Produk 1', 100000, 'images/produk1.jpg')"><i class="fas fa-cart-plus"></i> Tambah ke Keranjang</button>
+                </div>
+                <div class="product-item">
+                    <img src="images/produk2.jpg" alt="Produk 2">
+                    <h3>Produk 2</h3>
+                    <p>Rp. 200.000</p>
+                    <button onclick="addToCart('Produk 2', 200000, 'images/produk2.jpg')"><i class="fas fa-cart-plus"></i> Tambah ke Keranjang</button>
+                </div>
+                <div class="product-item">
+                    <img src="images/produk3.jpg" alt="Produk 3">
+                    <h3>Produk 3</h3>
+                    <p>Rp. 300.000</p>
+                    <button onclick="addToCart('Produk 3', 300000, 'images/produk3.jpg')"><i class="fas fa-cart-plus"></i> Tambah ke Keranjang</button>
+                </div>
+                <div class="product-item">
+                    <img src="images/produk4.jpg" alt="Produk 4">
+                    <h3>Produk 4</h3>
+                    <p>Rp. 400.000</p>
+                    <button onclick="addToCart('Produk 4', 400000, 'images/produk4.jpg')"><i class="fas fa-cart-plus"></i> Tambah ke Keranjang</button>
+                </div>
+                <div class="product-item">
+                    <img src="images/produk5.jpg" alt="Produk 5">
+                    <h3>Produk 5</h3>
+                    <p>Rp. 500.000</p>
+                    <button onclick="addToCart('Produk 5', 500000, 'images/produk5.jpg')"><i class="fas fa-cart-plus"></i> Tambah ke Keranjang</button>
+                </div>
+            </div>
+
+            <h3>Celana</h3>
+            <div class="product-list">
+                <div class="product-item">
+                    <img src="images/celana1.jpg" alt="Celana 1">
+                    <h3>Celana Panjang</h3>
+                    <p>Rp. 250.000</p>
+                    <button onclick="addToCart('Celana Panjang', 250000, 'images/celana1.jpg')"><i class="fas fa-cart-plus"></i> Tambah ke Keranjang</button>
+                </div>
+                <div class="product-item">
+                    <img src="images/celana2.jpg" alt="Celana 2">
+                    <h3>Celana Pendek</h3>
+                    <p>Rp. 200.000</p>
+                    <button onclick="addToCart('Celana Pendek', 200000, 'images/celana2.jpg')"><i class="fas fa-cart-plus"></i> Tambah ke Keranjang</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="cart">
+            <h2>Keranjang Belanja</h2>
+            <ul id="cart-items">
+                <li>Keranjang masih kosong.</li>
+            </ul>
+            <p id="total-price">Total: Rp. 0</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Mobile Shop. Semua hak dilindungi.</p>
+            <nav>
+                <ul>
+                    <li><a href="#products">Produk</a></li>
+                    <li><a href="#cart">Keranjang</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePaymentModal()">×</span>
+            <h2>Pembayaran</h2>
+            <p id="payment-amount"></p>
+            <label for="payment-method">Metode Pembayaran:</label>
+            <select id="payment-method">
+                <option value="credit-card">Kartu Kredit</option>
+                <option value="bank-transfer">Transfer Bank</option>
+                <option value="cash">Tunai</option>
+            </select>
+            <button onclick="confirmPayment()">Konfirmasi Pembayaran</button>
+            <button class="cancel" onclick="closePaymentModal()">Batal Pembayaran</button>
+        </div>
+    </div>
+
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSuccessModal()">×</span>
+            <h2>Pembayaran Berhasil</h2>
+            <p id="success-message"></p>
+            <button onclick="closeSuccessModal()">Tutup</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
